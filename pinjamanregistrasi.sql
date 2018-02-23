@@ -36,6 +36,13 @@ CREATE TABLE `mahasiswa` (
   `status` varchar(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+CREATE TABLE `users` (
+	`id` tinyint(4) NOT NULL AUTO_INCREMENT,
+	`username` varchar(100) NOT NULL,
+	`password` varchar(100) NOT NULL,
+	PRIMARY KEY(`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 --
 -- Indexes for dumped tables
 --
