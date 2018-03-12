@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 18, 2018 at 08:08 AM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 7.1.11
+-- Generation Time: Mar 12, 2018 at 02:12 PM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -36,13 +34,28 @@ CREATE TABLE `mahasiswa` (
   `status` varchar(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
 
 CREATE TABLE `users` (
-	`id` tinyint(4) NOT NULL AUTO_INCREMENT,
-	`username` varchar(100) NOT NULL,
-	`password` varchar(100) NOT NULL,
-	PRIMARY KEY(`id`)
-)ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+  `id` int(1) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `fullname` varchar(150) NOT NULL,
+  `email` varchar(200) DEFAULT NULL,
+  `password` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `fullname`, `email`, `password`) VALUES
+(1, 'michell', 'Michell Bernardi', 'michell.bernardi@ti.ukdw.ac.id', '1fb68d1928b308bbb782c6f687259f0eab4254c243754b4fbe5f0abe6209bbab'),
+(2, 'yoas', 'yoas maho', 'yoas@ti.ukdw.ac.id', 'a3b4df4379ab61d322bfd671dc4e127962e9a74fe5a68ca029b2712f0a741933');
+
 --
 -- Indexes for dumped tables
 --
@@ -54,6 +67,12 @@ ALTER TABLE `mahasiswa`
   ADD PRIMARY KEY (`nim`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -62,8 +81,11 @@ ALTER TABLE `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
   MODIFY `nim` int(8) NOT NULL AUTO_INCREMENT;
-COMMIT;
-
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
